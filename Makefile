@@ -13,7 +13,7 @@ SOURCES = jsURLparser.c cutils.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
-EXECUTABLE = libmgcutilities.a
+EXECUTABLE = libcutils.a
 
 $(EXECUTABLE): $(OBJECTS) 
 	$(ARCHIVER) $(ARFLAGS) $(EXECUTABLE) $(OBJECTS) $(LIBS)
