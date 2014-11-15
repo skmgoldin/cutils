@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void die(char *s);
 
 int flushstream(FILE *stream);
