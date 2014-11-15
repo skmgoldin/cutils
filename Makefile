@@ -7,18 +7,19 @@ ARFLAGS = rcs
 LDFLAGS = -g
 
 LIBS =
+LIBPATH = 
 
-SOURCES = jsURLparser.c utilities.c
+SOURCES = jsURLparser.c cutils.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
-EXECUTABLE = libCUtilities.a
+EXECUTABLE = libmgcutilities.a
 
 $(EXECUTABLE): $(OBJECTS) 
 	$(ARCHIVER) $(ARFLAGS) $(EXECUTABLE) $(OBJECTS) $(LIBS)
 
 .c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< $(LIB_PATH) -o $@
 
 .PHONY: clean
 clean:
