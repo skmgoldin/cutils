@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include "cutils.h"
 
 int collapsestring(char *string, int x);
 
 char * jsURLparser(int argc, char **argv) {
 
   if(argc > 2) {
-    perror("Only submit one URL, please.");
+    die("Only submit one URL, please.");
   }
 
   char *url = *(argv + 1);
