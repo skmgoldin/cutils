@@ -11,3 +11,7 @@ int flushstream(FILE *stream) {
   while((x = fgetc(stream)) != '\n') {;};
   return x;
 }
+
+void print(char *s) {
+  printf("%s\n", s);
+}
