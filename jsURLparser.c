@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "cutils.h"
 
 int collapsestring(char *string, int x);
 
