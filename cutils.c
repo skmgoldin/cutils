@@ -8,7 +8,7 @@ void die(char *s) {
 
 int flushstream(FILE *stream) {
   int x;
-  while((x = fgetc(stream)) != '\n') {;};
+  while((x = fgetc(stream)) != '\n');
   return x;
 }
 
