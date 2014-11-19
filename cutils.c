@@ -21,9 +21,7 @@ char * tokenizer(char *str, int which, const char *delim) {
   char *tok = malloc(sizeof(char) * 10000); 
   tok = strtok(str, delim);
 
-  print("tokenizing");
   if(which == 1) {
-    print(tok);
     return tok;
   }
 
@@ -32,7 +30,6 @@ char * tokenizer(char *str, int which, const char *delim) {
     tok = strtok(NULL, delim);
   }
 
-  print(tok);
   return tok;
 }
 
