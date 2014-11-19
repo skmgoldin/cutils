@@ -6,24 +6,27 @@ CFLAGS = -g -Wall $(INCLUDES)
 ARFLAGS = rcs
 LDFLAGS = -g
 
-LIBS =
-LIBPATH = 
-
 SOURCES = jsURLparser.c cutils.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
-EXECUTABLE = libcutils.a
+LIBRARY = libcutils.a
 
-$(EXECUTABLE): $(OBJECTS) 
-	$(ARCHIVER) $(ARFLAGS) $(EXECUTABLE) $(OBJECTS)
+$(LIBRARY): $(OBJECTS) 
+	$(ARCHIVER) $(ARFLAGS) $(LIBRARY) $(OBJECTS)
 
 .c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< $(LIBPATH) $(LIBS) -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 .PHONY: clean
 clean:
-	rm -f *.o $(EXECUTABLE)
+	rm -f *.o $(LIBRARY)
+
+.PHONY: embed
+embed: $(OBJECTS)
+
+.PHONY: reembed
+reembed: clean $(OBJECTS)
 
 .PHONY: all
-all: clean $(EXECUTABLE)
+all: clean $(LIBRARY)
