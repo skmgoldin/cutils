@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "string.h"
 
 void die(char *s) {
   fprintf(stderr, "%s\n", s);
@@ -14,4 +15,20 @@ int flushstream(FILE *stream) {
 
 void print(char *s) {
   printf("%s\n", s);
+}
+
+char * tokenizer(char *str, int which, const char *delim) {
+  char *tok = malloc(sizeof(char) * 10000); 
+  tok = strtok(str, delim);
+
+  if(which == 1) {
+    return tok;
+  }
+
+  int i;
+  for(i = 0; i < which; i++) {
+    tok = strtok(NULL, delim);
+  }
+
+  return tok;
 }
