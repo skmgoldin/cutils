@@ -16,10 +16,10 @@ OBJECTS = $(SOURCES:.c=.o)
 EXECUTABLE = libcutils.a
 
 $(EXECUTABLE): $(OBJECTS) 
-	$(ARCHIVER) $(ARFLAGS) $(EXECUTABLE) $(OBJECTS) $(LIBS)
+	$(ARCHIVER) $(ARFLAGS) $(EXECUTABLE) $(OBJECTS)
 
 .c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< $(LIB_PATH) -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< $(LIBPATH) $(LIBS) -o $@
 
 .PHONY: clean
 clean:
