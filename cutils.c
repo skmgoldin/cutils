@@ -32,8 +32,3 @@ char * tokenizer(char *str, int which, const char *delim) {
 
   return tok;
 }
-
-char * strimmut(char *str) {
-  char *cpstr = malloc(sizeof(char) * strlen(str) + 1);
-  return strcpy(cpstr, str);
-}
