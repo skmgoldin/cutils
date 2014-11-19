@@ -26,7 +26,7 @@ char * tokenizer(char *str, int which, const char *delim) {
   }
 
   int i;
-  for(i = 0; i < which; i++) {
+  for(i = 1; i < which; i++) {
     tok = strtok(NULL, delim);
   }
 
