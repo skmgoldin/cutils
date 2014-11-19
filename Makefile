@@ -22,11 +22,5 @@ $(LIBRARY): $(OBJECTS)
 clean:
 	rm -f *.o $(LIBRARY)
 
-.PHONY: embed
-embed: $(OBJECTS)
-
-.PHONY: reembed
-reembed: clean $(OBJECTS)
-
 .PHONY: all
 all: clean $(LIBRARY)
