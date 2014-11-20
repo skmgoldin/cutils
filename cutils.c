@@ -17,9 +17,8 @@ void print(char *s) {
   printf("%s\n", s);
 }
 
-char * tokenizer(char *str, int which, const char *delim) {
-  char *tok = malloc(sizeof(char) * 10000); 
-  tok = strtok(str, delim);
+char * tokenizer(char *cpy, char *tok, int which, const char *delim) {
+  strcpy(tok, strtok(cpy, delim));
 
   if(which == 1) {
     return tok;
@@ -27,7 +26,7 @@ char * tokenizer(char *str, int which, const char *delim) {
 
   int i;
   for(i = 1; i < which; i++) {
-    tok = strtok(NULL, delim);
+    strcpy(tok, strtok(NULL, delim));
   }
 
   return tok;
