@@ -31,3 +31,14 @@ char * tokenizer(char *cpy, char *tok, int which, const char *delim) {
 
   return tok;
 }
+
+int filesize(FILE *fp) {
+  int size;
+
+  fseek(fp, 0L, SEEK_END);
+  size = ftell(fp);
+  fseek(fp, 0l, SEEK_SET);
+
+  return size;
+  
+}
