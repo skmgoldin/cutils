@@ -32,8 +32,8 @@ char * tokenizer(char *cpy, char *tok, int which, const char *delim) {
   return tok;
 }
 
-int filesize(FILE *fp) {
-  int size;
+long filesize(FILE *fp) {
+  long size;
 
   fseek(fp, 0L, SEEK_END);
   size = ftell(fp);
